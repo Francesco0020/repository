@@ -1,0 +1,49 @@
+service: progettoOmninext
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: eu-west-1
+
+plugins:
+  - serverless-webpack
+
+functions:
+  createUser:
+    handler: C:\Users\753146\Desktop\progettoOmninext\src
+    events:
+      - httpApi:
+          path: /users
+          method: post
+  getUserByCodiceFiscale:
+    handler: C:\Users\753146\Desktop\progettoOmninext\src
+    events:
+      - httpApi:
+          path: /users/{codiceFiscale}
+          method: get
+
+resources:
+  Resources:
+    UserTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Utenti
+        AttributeDefinitions:
+          - AttributeName: codiceFiscale
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S
+          - AttributeName: surname
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+          - AttributeName: phoneNumber
+            AttributeType: S
+          - AttributeName: role
+            AttributeType: S
+        KeySchema:
+          - AttributeName: codiceFiscale
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

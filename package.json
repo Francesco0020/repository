@@ -1,0 +1,16 @@
+{
+  "name": "json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createUser.handler.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1599.0",
+    "git": "^0.1.5",
+    "serverless-webpack": "^5.13.0"
+  }
+}
