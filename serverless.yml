@@ -47,3 +47,17 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+
+        #service: progettoOmninext: Definisce il nome del servizio.
+        #provider: Specifica il provider cloud utilizzato, che in questo caso è AWS. Le impostazioni sotto provider indicano che il runtime utilizzato è Node.js 14.x e il servizio è situato nella regione eu-west-1 di AWS.
+        #reateUser e getUserByCodiceFiscale: Queste sono le funzioni Lambda del progetto.
+        # handler: Indica il percorso del file JavaScript che contiene la funzione Lambda.
+        #events: Definisce gli eventi che triggerano le funzioni Lambda. In questo caso, entrambe le funzioni sono triggerate da eventi HTTP API. La funzione createUser è triggerata da una richiesta POST all'endpoint /users, mentre la funzione getUserByCodiceFiscale è triggerata da una richiesta GET all'endpoint /users/{codiceFiscale}.
+        #UserTable: Questa sezione definisce una risorsa AWS, in questo caso una tabella DynamoDB chiamata Utenti.
+        #Type: AWS::DynamoDB::Table: Specifica il tipo di risorsa, che è una tabella DynamoDB.
+        #Properties: Contiene le proprietà della tabella DynamoDB, come il nome della tabella, gli attributi e lo schema chiave.
+        #TableName: Il nome della tabella DynamoDB.
+        #AttributeDefinitions: Definisce gli attributi della tabella, ciascuno con un nome e un tipo.
+        #KeySchema: Specifica lo schema chiave della tabella, in questo caso un singolo attributo chiamato codiceFiscale utilizzato come chiave hash.
+        #ProvisionedThroughput: Specifica la capacità provisionata per la tabella, cioè il numero di unità di lettura e scrittura disponibili per la tabella. In questo caso, è impostato su 1 unità di lettura e 1 unità di scrittura.
+    
